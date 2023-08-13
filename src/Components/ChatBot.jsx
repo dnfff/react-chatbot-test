@@ -21,14 +21,22 @@ function ChatBot() {
   }
   function setTimeout2() {
     setAnswer("Установить будильник")
+    setLoader(true)
     setTimeout(() => {
         setState(!state)
+    }, 3000)
+    setTimeout(() => {
+        setLoader(false)
     }, 3000)
   }
   function setTimeout3() {
     setAnswer("Вывести погоду")
+    setLoader(true)
     setTimeout(() => {
         setState(!state)
+    }, 3000)
+    setTimeout(() => {
+        setLoader(false)
     }, 3000)
   }
 
@@ -75,9 +83,7 @@ function ChatBot() {
             loader && (
                 <div className='smsUser'>
                     <div className='smsKaptch2'>
-
-                            <Loader />
-
+                        <Loader />
                     </div>
                     <img src={user} alt='' />
                 </div>
